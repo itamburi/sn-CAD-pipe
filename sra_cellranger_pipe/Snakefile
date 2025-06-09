@@ -1,0 +1,140 @@
+SAMPLES = [f"SRR{9130236 + i}" for i in range(1, 19)]
+
+rule all:
+    input:
+        "cellranger_HS_ref/genes/genes.gtf",
+        "logs/.init",
+        expand("fastq/{sample}_S1_L001_R1_001.fastq.gz", sample=SAMPLES),
+        expand("fastq/{sample}_S1_L001_R2_001.fastq.gz", sample=SAMPLES),
+        expand("fastq/{sample}_S1_L001_I1_001.fastq.gz", sample=SAMPLES),
+        expand("counts/{sample}/outs/filtered_feature_bc_matrix/matrix.mtx.gz", sample=SAMPLES),
+        "GSE131780/outs/analysis/clustering/graphclust/clusters.csv"
+
+# Ensure all directories exist
+# directory() tells snakemake to expect the dir as an output
+# touch() checks that the rule is complete
+rule init_dirs:
+    output:
+        touch("logs/.init"),
+        directory("raw"),
+        directory("fastq"),
+        directory("counts"),
+        directory("fq")
+    shell:
+        """
+        mkdir -p logs raw fastq counts fq
+        touch logs/.init
+        """
+
+# Build CellRanger reference
+rule mkref:
+    input:
+        "logs/.init"
+    output:
+        "cellranger_HS_ref/genes/genes.gtf"
+    params:
+        fasta="/dfs6/pub/itamburi/CAD_snrnaseq/ensembl/Homo_sapiens.GRCh38.dna.primary_assembly.fa",
+        gtf="/dfs6/pub/itamburi/CAD_snrnaseq/ensembl/Homo_sapiens.GRCh38.114.gtf.gz",
+        genome="cellranger_HS_ref"
+    threads: 8
+    shell:
+        """
+        module load cellranger/8.0.1
+        cellranger mkref \
+          --nthreads={threads} \
+          --genome={params.genome} \
+          --fasta={params.fasta} \
+          --genes={params.gtf}
+        """
+
+# Download fastqs
+rule download_fastq:
+    input:
+        "logs/.init"
+    output:
+        r1="raw/{sample}_1.fastq.gz",
+        r2="raw/{sample}_2.fastq.gz",
+        r3="raw/{sample}_3.fastq.gz"
+    params:
+        sra="{sample}"
+    shell:
+        """
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip {params.sra} --outdir raw
+        """
+
+# Rename for CellRanger
+rule rename_fastq:
+    input:
+        r1="raw/{sample}_1.fastq.gz",
+        r2="raw/{sample}_2.fastq.gz",
+        r3="raw/{sample}_3.fastq.gz"
+    output:
+        r1_out="fastq/{sample}_S1_L001_R1_001.fastq.gz",
+        r2_out="fastq/{sample}_S1_L001_R2_001.fastq.gz",
+        i1_out="fastq/{sample}_S1_L001_I1_001.fastq.gz"
+    shell:
+        """
+        cp {input.r1} {output.r1_out}
+        cp {input.r2} {output.r2_out}
+        cp {input.r3} {output.i1_out}
+        """
+
+# CellRanger count
+rule cellranger_count:
+    input:
+        r1="fastq/{sample}_S1_L001_R1_001.fastq.gz",
+        r2="fastq/{sample}_S1_L001_R2_001.fastq.gz",
+        i1="fastq/{sample}_S1_L001_I1_001.fastq.gz",
+        ref="cellranger_HS_ref/genes/genes.gtf"
+    output:
+        "counts/{sample}/outs/filtered_feature_bc_matrix/matrix.mtx.gz"
+    params:
+        fq="/dfs6/pub/itamburi/CAD_snrnaseq/fq",
+        ref="/dfs6/pub/itamburi/CAD_snrnaseq/cellranger_HS_ref",
+        sample="{sample}"
+    threads: 8
+    shell:
+        """
+        module load cellranger/8.0.1
+        cellranger count \
+            --id={params.sample} \
+            --transcriptome={params.ref} \
+            --fastqs={params.fq} \
+            --sample={params.sample} \
+            --localcores={threads} \
+            --localmem=24 \
+            --create-bam false
+        mv {params.sample} counts/{params.sample}
+        """
+
+# Generate CSV for aggregation
+rule make_agg_csv:
+    input:
+        expand("counts/{sample}/outs/molecule_info.h5", sample=SAMPLES)
+    output:
+        "GSE131780_libraries.csv"
+    run:
+        with open(output[0], "w") as out:
+            out.write("sample_id,molecule_h5\n")
+            for sample in SAMPLES:
+                path = f"{os.getcwd()}/counts/{sample}/outs/molecule_info.h5"
+                out.write(f"{sample},{path}\n")
+
+# Aggregate counts
+rule cellranger_aggr:
+    input:
+        csv="GSE131780_libraries.csv"
+    output:
+        "GSE131780/outs/analysis/clustering/graphclust/clusters.csv"
+    params:
+        outdir="GSE131780"
+    threads: 8
+    shell:
+        """
+        module load cellranger/8.0.1
+        cellranger aggr \
+            --id={params.outdir} \
+            --csv={input.csv} \
+            --normalize=none
+        """
