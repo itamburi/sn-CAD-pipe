@@ -7,14 +7,17 @@ WD = "/dfs6/pub/itamburi/pub/CAD_snrnaseq"
 rule all:
     input:
         "logs/.init",
+        # cellranger mkref outputs
         f"{WD}/cellranger_GRCh38/genes/genes.gtf*",
         f"{WD}/cellranger_GRCh38/fasta/genome.fa*",
-        # expand tells snakemake to expect all of these SRR files
+        # expand tells snakemake to expect all of these SRR fastq files/symlinks
         expand(f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz", sample=SAMPLES),
         expand(f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz", sample=SAMPLES),
         expand(f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz", sample=SAMPLES),
         expand(f"{WD}/counts/{{sample}}/outs/filtered_feature_bc_matrix/matrix.mtx.gz", sample=SAMPLES),
-        f"{WD}/GSE131780/outs/analysis/clustering/graphclust/clusters.csv"
+        #f"{WD}/GSE131780/outs/analysis/clustering/graphclust/clusters.csv"
+        f"{WD}/counts/{{sample}}/outs/filtered_feature_bc_matrix/matrix.mtx.gz",
+        f"{WD}/counts/{{sample}}/outs/molecule_info.h5"
 
 # Ensure all directories exist
 # directory() tells snakemake to expect the dir as an output
@@ -27,6 +30,7 @@ rule init_dirs:
         directory(f"{SRA_DIR}")
     shell:
         """
+        cd {WD}
         mkdir -p logs fastq counts
         touch {WD}/logs/.init
         """
@@ -70,7 +74,7 @@ rule download_fastq:
         sra = lambda wildcards: wildcards.sample,
         outdir=SRA_DIR
     log:
-        f"{WD}/logs/download_fastq.log"
+        f"{WD}/logs/{{sample}}/download_fastq.log"
     shell:
         """
         module load sra-tools/3.0.0
@@ -89,9 +93,9 @@ rule rename_fastq:
         i1_out=f"{SRA_DIR}/{{sample}}_S1_L001_I1_001.fastq.gz"
     shell:
         """
-        cp {input.r1} {output.r1_out}
-        cp {input.r2} {output.r2_out}
-        cp {input.r3} {output.i1_out}
+        mv {input.r1} {output.r1_out}
+        mv {input.r2} {output.r2_out}
+        mv {input.r3} {output.i1_out}
         """
 
 # Make symbolic links in working directory

@@ -1,6 +1,6 @@
-SRR*
-GSE131780
-cellranger_HS_ref
-ensembl
-fq
-z
+bash_scripts/SRR*
+bash_scripts/GSE131780
+bash_scripts/cellranger_HS_ref
+bash_scripts/ensembl
+bash_scripts/fq
+bash_scripts/z
