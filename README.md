@@ -13,14 +13,13 @@ This pipeline:
 
 - Initializes necessary folders
 - Builds a CellRanger-compatible reference (from FASTA + GTF)
-	- Human gtf and fasta files must be specified in snakefile header
+	- Human GTF and FASTA files must be specified in snakefile header
 - Downloads and renames SRA FASTQ files
-	- SRA tools must be configured in advance on cluster
-	- Specify download location in snakefile
-	- Current setup to downloads to lab CRSP storage space
+	- `sra-tools` must be configured in advance on cluster (see below)
+	- FASTQ download location must be specified in snakefile header (currently lab CRSP storage space)
 - Symbolically links renamed FASTQs
-- Runs cellranger count per sample
-- Optionally aggregates counts with cellranger aggr
+- Runs `cellranger count` per sample
+- Optionally aggregates counts with `cellranger aggr`
 
 ---
 
@@ -84,17 +83,18 @@ Output: `cellranger_GRCh38/`
 
 Downloads SRA reads and splits into 3 FASTQ files (R1, R2, I1).
 
-*Note*: On RCIC HPC3, sra-tools cahce musy be preconfigured with vbd-config by: 
+**Note**: On RCIC HPC3, sra-tools cache musy be preconfigured by running: 
 ```
 module load sra-tools/3.0.0
 vdb-config -i
 ```
-In the interactive windown navigate to CACHE window. Replace location of user repository (`/share/crsp/lab/choljang/itamburi/sra_data/cache`).
-[See also](https://www.youtube.com/watch?v=ye4W6zTWtb4&ab_channel=Dr.Asif%E2%80%99sMol.Biology)
+In the interactive window navigate to CACHE. Specify path of user repository (`/share/crsp/lab/choljang/itamburi/sra_data/cache`).
+[See also](https://www.youtube.com/watch?v=ye4W6zTWtb4&ab_channel=Dr.Asif%E2%80%99sMol.Biology) for video instructions.
 
-*Note*: vdb-config -i sets the VDB cache location (for .sra files), but fastq-dump writes FASTQ files to the current directory by default; use --outdir to specify a custom output location for FASTQ files.
+**Note**: `vdb-config -i` only sets the VDB cache location (for .sra files). Fastq-dump writes FASTQ files to the current directory by default; use --outdir to specify a custom output location for FASTQ files.
 
-*The actual FASTQs download location is specified in the snakefile header*
+**The actual FASTQ download location must be specified in the snakefile header**
+
 
 ### rename_fastq
 
@@ -104,7 +104,7 @@ Renames SRA output files to CellRanger's naming convention:
 SRRxxxxxx_1.fastq.gz -> SRRxxxxxx_S1_L001_R1_001.fastq.gz
 ```
 
-*Explanation:*
+**Explanation:**
 `fastq-dump` generates FASTQ files in the format:
 - `SRR#######_1.fastq.gz`
 - `SRR#######_2.fastq.gz`
@@ -123,7 +123,6 @@ To make the files compatible with **Cell Ranger's naming convention**, we rename
 
 
 ### make_symlink
-*Note* 
 
 Creates symlinks to the renamed FASTQs in the working directory.
 
