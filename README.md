@@ -3,6 +3,8 @@
 
 This pipeline processes human single-nucleus RNA-seq (snRNA-seq) data using CellRanger and a Snakemake workflow. It is built for execution on the UCI RCIC cluster.
 
+Current implementation processes SRA accessions from GSE131780, published by Wirka RC et al, Nat Med 2019 PMID: 31359001
+
 ---
 
 ## 🔬 Pipeline Overview
@@ -11,7 +13,11 @@ This pipeline:
 
 - Initializes necessary folders
 - Builds a CellRanger-compatible reference (from FASTA + GTF)
+	- Human gtf and fasta files must be specified in snakefile header
 - Downloads and renames SRA FASTQ files
+	- SRA tools must be configured in advance on cluster
+	- Specify download location in snakefile
+	- Current setup to downloads to lab CRSP storage space
 - Symbolically links renamed FASTQs
 - Runs cellranger count per sample
 - Optionally aggregates counts with cellranger aggr
@@ -78,6 +84,18 @@ Output: `cellranger_GRCh38/`
 
 Downloads SRA reads and splits into 3 FASTQ files (R1, R2, I1).
 
+*Note*: On RCIC HPC3, sra-tools cahce musy be preconfigured with vbd-config by: 
+```
+module load sra-tools/3.0.0
+vdb-config -i
+```
+In the interactive windown navigate to CACHE window. Replace location of user repository (`/share/crsp/lab/choljang/itamburi/sra_data/cache`).
+[See also](https://www.youtube.com/watch?v=ye4W6zTWtb4&ab_channel=Dr.Asif%E2%80%99sMol.Biology)
+
+*Note*: vdb-config -i sets the VDB cache location (for .sra files), but fastq-dump writes FASTQ files to the current directory by default; use --outdir to specify a custom output location for FASTQ files.
+
+*The actual FASTQs download location is specified in the snakefile header*
+
 ### rename_fastq
 
 Renames SRA output files to CellRanger's naming convention:
@@ -86,7 +104,26 @@ Renames SRA output files to CellRanger's naming convention:
 SRRxxxxxx_1.fastq.gz -> SRRxxxxxx_S1_L001_R1_001.fastq.gz
 ```
 
+*Explanation:*
+`fastq-dump` generates FASTQ files in the format:
+- `SRR#######_1.fastq.gz`
+- `SRR#######_2.fastq.gz`
+- `SRR#######_3.fastq.gz`
+
+The following reference [here](https://davetang.org/muse/2018/06/06/10x-single-cell-bam-files/) gives us a breakdown of what each FASTQ contains
+Using `zcat SRR##_1.fastq.gz | head`, we confirm:
+- `_1`: 26 bp reads = cell barcode + UMI → `R1`
+- `_2`: 98 bp reads = cDNA → `R2`
+- `_3`: 8 bp reads = i7 sample index → `I1`
+
+To make the files compatible with **Cell Ranger's naming convention**, we rename as follows:
+- From: `SRR#######_1.fastq.gz`
+- To: `<sample>_S1_L001_R1_001.fastq.gz` (and similarly for R2/I1)
+
+
+
 ### make_symlink
+*Note* 
 
 Creates symlinks to the renamed FASTQs in the working directory.
 
