@@ -7,13 +7,13 @@ WD = "/dfs6/pub/itamburi/pub/CAD_snrnaseq"
 rule all:
     input:
         "logs/.init",
-        "cellranger_GRCh38/genes/genes.gtf*",
-        "cellranger_GRCh38/fasta/genome.fa*",
+        f"{WD}/cellranger_GRCh38/genes/genes.gtf*",
+        f"{WD}/cellranger_GRCh38/fasta/genome.fa*",
         # expand tells snakemake to expect all of these SRR files
-        expand("fastq/{sample}_S1_L001_R1_001.fastq.gz", sample=SAMPLES),
-        expand("fastq/{sample}_S1_L001_R2_001.fastq.gz", sample=SAMPLES),
-        expand("fastq/{sample}_S1_L001_I1_001.fastq.gz", sample=SAMPLES),
-        expand("counts/{sample}/outs/filtered_feature_bc_matrix/matrix.mtx.gz", sample=SAMPLES),
+        expand(f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz", sample=SAMPLES),
+        expand(f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz", sample=SAMPLES),
+        expand(f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz", sample=SAMPLES),
+        expand(f"{WD}/counts/{{sample}}/outs/filtered_feature_bc_matrix/matrix.mtx.gz", sample=SAMPLES),
         f"{WD}/GSE131780/outs/analysis/clustering/graphclust/clusters.csv"
 
 # Ensure all directories exist
@@ -42,6 +42,8 @@ rule mkref:
         fasta=REF_FA,
         gtf=REF_GTF,
         outdir=f"{WD}/cellranger_GRCh38"
+    log:
+        f"{WD}/logs/mkref.log"
     threads: 8
     shell:
         """
@@ -67,6 +69,8 @@ rule download_fastq:
         # Use lambda to access {sample} in params; direct strings like "sra={sample}" won't expand
         sra = lambda wildcards: wildcards.sample,
         outdir=SRA_DIR
+    log:
+        f"{WD}/logs/download_fastq.log"
     shell:
         """
         module load sra-tools/3.0.0
@@ -112,9 +116,9 @@ rule make_symlink:
 # CellRanger count
 rule cellranger_count:
     input:
-        r1="fastq/{sample}_S1_L001_R1_001.fastq.gz",
-        r2="fastq/{sample}_S1_L001_R2_001.fastq.gz",
-        i1="fastq/{sample}_S1_L001_I1_001.fastq.gz",
+        r1=f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz",
+        r2=f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz",
+        i1=f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz",
         ref=f"{WD}/cellranger_GRCh38"
     output:
         f"{WD}/counts/{{sample}}/outs/filtered_feature_bc_matrix/matrix.mtx.gz",
@@ -123,9 +127,12 @@ rule cellranger_count:
         fastq=f"{WD}/fastq",
         ref=f"{WD}/cellranger_GRCh38",
         sample = lambda wildcards: wildcards.sample
+    log:
+        f"{WD}/logs/{{sample}}.cellranger_count.log"
     threads: 8
     shell:
         """
+        set -e
         module load cellranger/8.0.1
         cd {WD}/counts
         cellranger count \
@@ -156,19 +163,20 @@ rule make_agg_csv:
 
 
 # Aggregate counts
-rule cellranger_aggr:
-    input:
-        csv=f"{WD}/GSE131780_libraries.csv"
-    output:
-        f"{WD}/GSE131780/outs/analysis/clustering/graphclust/clusters.csv"
-    params:
-        outdir=f"{WD}/GSE131780"
-    threads: 8
-    shell:
-        """
-        module load cellranger/8.0.1
-        cellranger aggr \
-            --id={params.outdir} \
-            --csv={input.csv} \
-            --normalize=none
-        """
+# rule cellranger_aggr:
+#    input:
+#        csv=f"{WD}/GSE131780_libraries.csv",
+#        f"{WD}/counts/{{sample}}/outs/molecule_info.h5"
+#    output:
+#        f"{WD}/GSE131780/outs/analysis/clustering/graphclust/clusters.csv"
+#    params:
+#        outdir=f"{WD}/GSE131780"
+#    threads: 8
+#    shell:
+#        """
+#        module load cellranger/8.0.1
+#        cellranger aggr \
+#            --id={params.outdir} \
+#            --csv={input.csv} \
+#            --normalize=none
+#        """
