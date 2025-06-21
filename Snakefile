@@ -9,17 +9,15 @@ rule all:
         #rule init_dirs outputs
         f"{WD}/logs/.init",
         # cellranger mkref outputs
-        f"{WD}/log/mkref.done"
-        # expand tells snakemake to expect all of these SRR fastq files/symlinks
-        #expand(f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz", sample=SAMPLES),
-        #expand(f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz", sample=SAMPLES),
-        #expand(f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz", sample=SAMPLES),
+        f"{WD}/cellranger_GRCh38/_mkref.done",
+        #expand tells snakemake to expect all of these SRR fastq files/symlinks
+        expand(f"{SRA_DIR}/{{sample}}_1.fastq.gz", sample=SAMPLES),
+        expand(f"{SRA_DIR}/{{sample}}_2.fastq.gz", sample=SAMPLES),
+        expand(f"{SRA_DIR}/{{sample}}_3.fastq.gz", sample=SAMPLES),
+        expand(f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz", sample=SAMPLES),
+        expand(f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz", sample=SAMPLES),
+        expand(f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz", sample=SAMPLES)
         #expand(f"{WD}/counts/{{sample}}/outs/filtered_feature_bc_matrix/matrix.mtx.gz", sample=SAMPLES),
-       
-        # expand(f"{SRA_DIR}/{{sample}}_1.fastq.gz", sample=SAMPLES),
-        # expand(f"{SRA_DIR}/{{sample}}_2.fastq.gz", sample=SAMPLES),
-        # expand(f"{SRA_DIR}/{{sample}}_3.fastq.gz", sample=SAMPLES)
-
         #f"{WD}/GSE131780/outs/analysis/clustering/graphclust/clusters.csv"
         #expand(f"{WD}/counts/{{sample}}/outs/filtered_feature_bc_matrix/matrix.mtx.gz", sample=SAMPLES),
         #expand(f"{WD}/counts/{{sample}}/outs/molecule_info.h5", sample=SAMPLES)
@@ -29,9 +27,7 @@ rule all:
 # touch() checks that the rule is complete
 rule init_dirs:
     output:
-        touch(f"{WD}/logs/.init"),
-        directory(f"{WD}/counts"),
-        directory(f"{WD}/fastq")
+        touch(f"{WD}/logs/.init")
     shell:
         """
         mkdir -p {WD}/logs {WD}/fastq {WD}/counts
@@ -43,7 +39,7 @@ rule mkref:
     input:
         f"{WD}/logs/.init"
     output:
-        f"{WD}/log/mkref.done" # make a "done" file after cellranger mkref is finished
+        f"{WD}/cellranger_GRCh38/_mkref.done" # make a "done" file after cellranger mkref is finished
     params:
         fasta=REF_FA,
         gtf=REF_GTF,
@@ -65,46 +61,46 @@ rule mkref:
           touch {output}
         """
 
-# *** Download fastqs ***
-# rule download_fastq:
-#     input:
-#         f"{WD}/logs/.init",
-#         f"{SRA_DIR}"
-#     output:
-#         # SRA_DIR is a python variable, sample is a snakemake wildcard
-#         # f"{SRA_DIR}/{{sample}}_1.fastq.gz" uses double curly braces to escape {sample} inside f-string
-#         r1=f"{SRA_DIR}/{{sample}}_1.fastq.gz",
-#         r2=f"{SRA_DIR}/{{sample}}_2.fastq.gz",
-#         r3=f"{SRA_DIR}/{{sample}}_3.fastq.gz"
-#     params:
-#         # Use lambda to access {sample} in params; direct strings like "sra={sample}" won't expand
-#         sra = lambda wildcards: wildcards.sample,
-#         outdir=SRA_DIR
-#     log:
-#         f"{WD}/logs/download_fastq_{{sample}}.log"
-#     shell:
-#         """
-#         module load sra-tools/3.0.0
-#         fastq-dump --split-files --gzip {params.sra} --outdir {params.outdir}
-#         """
+#*** Download fastqs ***
+rule download_fastq:
+    input:
+        f"{WD}/logs/.init",
+        f"{SRA_DIR}"
+    output:
+        # SRA_DIR is a python variable, sample is a snakemake wildcard
+        # f"{SRA_DIR}/{{sample}}_1.fastq.gz" uses double curly braces to escape {sample} inside f-string
+        r1=f"{SRA_DIR}/{{sample}}_1.fastq.gz",
+        r2=f"{SRA_DIR}/{{sample}}_2.fastq.gz",
+        r3=f"{SRA_DIR}/{{sample}}_3.fastq.gz"
+    params:
+        # Use lambda to access {sample} in params; direct strings like "sra={sample}" won't expand
+        sra = lambda wildcards: wildcards.sample,
+        outdir=SRA_DIR
+    log:
+        f"{WD}/logs/download_fastq_{{sample}}.log"
+    shell:
+        """
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip {params.sra} --outdir {params.outdir}
+        """
 
 # *** Make symlinks to data in WD ***
 # symlink names are formatted to match expected cellranger count input
-# rule make_symlink:
-#     input:
-#         r1=f"{SRA_DIR}/{{sample}}_1.fastq.gz",
-#         r2=f"{SRA_DIR}/{{sample}}_2.fastq.gz",
-#         r3=f"{SRA_DIR}/{{sample}}_3.fastq.gz"
-#     output:
-#         r1_out=f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz",
-#         r2_out=f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz",
-#         i1_out=f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz"
-#     shell:
-#         """
-#         ln -sf {input.r1} {output.r1_out}
-#         ln -sf {input.r2} {output.r2_out}
-#         ln -sf {input.r3} {output.i1_out}
-#         """
+rule make_symlink:
+    input:
+        r1=f"{SRA_DIR}/{{sample}}_1.fastq.gz",
+        r2=f"{SRA_DIR}/{{sample}}_2.fastq.gz",
+        r3=f"{SRA_DIR}/{{sample}}_3.fastq.gz"
+    output:
+        r1_out=f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz",
+        r2_out=f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz",
+        i1_out=f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz"
+    shell:
+        """
+        ln -sf {input.r1} {output.r1_out}
+        ln -sf {input.r2} {output.r2_out}
+        ln -sf {input.r3} {output.i1_out}
+        """
 
 
 # CellRanger count
