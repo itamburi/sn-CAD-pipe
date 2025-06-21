@@ -1,0 +1,69 @@
+Assuming unrestricted shared filesystem usage.
+host: hpc3-15-21
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+all          1
+mkref        1
+total        2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 15:57:27 2025]
+localrule mkref:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38, /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38/genes/genes.gtf*, /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38/fasta/genome.fa*
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/mkref.log
+    jobid: 2
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38/genes/genes.gtf*, /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38/fasta/genome.fa*
+    threads: 8
+    resources: tmpdir=/tmp/itamburi/39793152
+Shell command: 
+        module load cellranger/8.0.1
+        cellranger mkref           --nthreads=8           --genome=/dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38           --fasta=/dfs6/pub/itamburi/refs/GRCh_ensembl/Homo_sapiens.GRCh38.dna.primary_assembly.fa           --genes=/dfs6/pub/itamburi/refs/GRCh_ensembl/Homo_sapiens.GRCh38.114.gtf.gz
+        
+error: invalid value '/dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38' for '--genome <GENOME_NAMES>': must contain only letters, digits, underscores, and dashes.
+
+For more information, try '--help'.
+RuleException:
+CalledProcessError in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 57:
+Command 'set -euo pipefail;  
+        module load cellranger/8.0.1
+        cellranger mkref           --nthreads=8           --genome=/dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38           --fasta=/dfs6/pub/itamburi/refs/GRCh_ensembl/Homo_sapiens.GRCh38.dna.primary_assembly.fa           --genes=/dfs6/pub/itamburi/refs/GRCh_ensembl/Homo_sapiens.GRCh38.114.gtf.gz' returned non-zero exit status 2.
+[Fri Jun 20 15:57:28 2025]
+Error in rule mkref:
+    message: None
+    jobid: 2
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38, /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38/genes/genes.gtf*, /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38/fasta/genome.fa*
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/mkref.log (check log file(s) for error details)
+    shell:
+        
+        module load cellranger/8.0.1
+        cellranger mkref           --nthreads=8           --genome=/dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38           --fasta=/dfs6/pub/itamburi/refs/GRCh_ensembl/Homo_sapiens.GRCh38.dna.primary_assembly.fa           --genes=/dfs6/pub/itamburi/refs/GRCh_ensembl/Homo_sapiens.GRCh38.114.gtf.gz
+        
+        (command exited with non-zero exit code)
+Removing output files of failed job mkref since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38
+Exiting because a job execution failed. Look below for error messages
+[Fri Jun 20 15:57:29 2025]
+Error in rule mkref:
+    message: None
+    jobid: 2
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38, /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38/genes/genes.gtf*, /dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38/fasta/genome.fa*
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/mkref.log (check log file(s) for error details)
+    shell:
+        
+        module load cellranger/8.0.1
+        cellranger mkref           --nthreads=8           --genome=/dfs6/pub/itamburi/CAD_snrnaseq/cellranger_GRCh38           --fasta=/dfs6/pub/itamburi/refs/GRCh_ensembl/Homo_sapiens.GRCh38.dna.primary_assembly.fa           --genes=/dfs6/pub/itamburi/refs/GRCh_ensembl/Homo_sapiens.GRCh38.114.gtf.gz
+        
+        (command exited with non-zero exit code)
+Complete log(s): /dfs6/pub/itamburi/CAD_snrnaseq/.snakemake/log/2025-06-20T155727.579153.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

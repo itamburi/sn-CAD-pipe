@@ -1,6 +1,10 @@
+.snakemake
 bash_scripts/SRR*
 bash_scripts/GSE131780
 bash_scripts/cellranger_HS_ref
 bash_scripts/ensembl
 bash_scripts/fq
 bash_scripts/z
+cellranger_GRCh38/*
+counts/*
+fastq/*

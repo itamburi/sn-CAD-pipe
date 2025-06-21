@@ -96,9 +96,9 @@ In the interactive window navigate to CACHE. Specify path of user repository (`/
 **The actual FASTQ download location must be specified in the snakefile header**
 
 
-### rename_fastq
+### make_symlink
 
-Renames SRA output files to CellRanger's naming convention:
+Creates symlinks to FASTQs in the working directory, following CellRanger's naming convention:
 
 ```
 SRRxxxxxx_1.fastq.gz -> SRRxxxxxx_S1_L001_R1_001.fastq.gz
@@ -116,15 +116,10 @@ Using `zcat SRR##_1.fastq.gz | head`, we confirm:
 - `_2`: 98 bp reads = cDNA → `R2`
 - `_3`: 8 bp reads = i7 sample index → `I1`
 
-To make the files compatible with **Cell Ranger's naming convention**, we rename as follows:
+To make the files compatible with **Cell Ranger's naming convention**, we create new symlink names as follows:
 - From: `SRR#######_1.fastq.gz`
 - To: `<sample>_S1_L001_R1_001.fastq.gz` (and similarly for R2/I1)
 
-
-
-### make_symlink
-
-Creates symlinks to the renamed FASTQs in the working directory.
 
 ### cellranger_count
 
@@ -202,3 +197,4 @@ Ian Tamburini – UCI RCIC cluster user
 
 - [10x Genomics Cell Ranger](https://support.10xgenomics.com/)
 - [Snakemake Documentation](https://snakemake.readthedocs.io/en/stable/)
+- [University of Cambridge Intro to sc-RNA-seq](https://bioinformatics-core-shared-training.github.io/UnivCambridge_ScRnaSeq_Nov2021/Markdowns/03_CellRanger.html)

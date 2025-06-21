@@ -1,0 +1,27 @@
+
+
+Martian Runtime - v4.0.12
+Serving UI at http://hpc3-15-21:40553?auth=3wZ3DeHr58Ppo2qB1fZtJuSuIWzu7e3LW1M8SOH-U9A
+
+Running preflight checks (please wait)...
+2025-06-20 16:52:28 [runtime] (ready)           ID.mkref_cellranger_GRCh38.MAKE_REFERENCE._MAKE_REFERENCE
+2025-06-20 16:52:28 [runtime] (run:local)       ID.mkref_cellranger_GRCh38.MAKE_REFERENCE._MAKE_REFERENCE.fork0.split
+2025-06-20 16:52:29 [runtime] (split_complete)  ID.mkref_cellranger_GRCh38.MAKE_REFERENCE._MAKE_REFERENCE
+2025-06-20 16:52:29 [runtime] (run:local)       ID.mkref_cellranger_GRCh38.MAKE_REFERENCE._MAKE_REFERENCE.fork0.join
+2025-06-20 16:58:31 [runtime] (update)          ID.mkref_cellranger_GRCh38.MAKE_REFERENCE._MAKE_REFERENCE.fork0 join_running
+2025-06-20 17:04:35 [runtime] (update)          ID.mkref_cellranger_GRCh38.MAKE_REFERENCE._MAKE_REFERENCE.fork0 join_running
+2025-06-20 17:10:34 [runtime] (update)          ID.mkref_cellranger_GRCh38.MAKE_REFERENCE._MAKE_REFERENCE.fork0 join_running
+2025-06-20 17:16:34 [runtime] (update)          ID.mkref_cellranger_GRCh38.MAKE_REFERENCE._MAKE_REFERENCE.fork0 join_running
+2025-06-20 17:17:32 [runtime] (join_complete)   ID.mkref_cellranger_GRCh38.MAKE_REFERENCE._MAKE_REFERENCE
+
+Outputs:
+- reference: /dfs6/pub/itamburi/CAD_snrnaseq/mkref_cellranger_GRCh38/outs/reference
+
+Waiting 6 seconds for UI to do final refresh.
+Pipestance completed successfully!
+
+2025-06-20 17:17:39 Shutting down.
+Saving pipestance info to "mkref_cellranger_GRCh38/mkref_cellranger_GRCh38.mri.tgz"
+>>> Reference successfully created! <<<
+You can now specify this reference on the command line:
+cellranger count --transcriptome=cellranger_GRCh38 ...
