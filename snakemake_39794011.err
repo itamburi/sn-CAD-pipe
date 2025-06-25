@@ -1,0 +1,808 @@
+Assuming unrestricted shared filesystem usage.
+host: hpc3-15-19
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+download_fastq       18
+make_symlink         18
+total                37
+
+Select jobs to execute...
+Execute 18 jobs...
+
+[Fri Jun 20 17:39:56 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130249.log
+    jobid: 15
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_2.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130249
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130249 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130241.log
+    jobid: 7
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_3.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130241
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130241 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130251.log
+    jobid: 17
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_1.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130251
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130251 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130243.log
+    jobid: 9
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_3.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130243
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130243 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130237.log
+    jobid: 3
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_2.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130237
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130237 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130253.log
+    jobid: 19
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_1.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130253
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130253 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130246.log
+    jobid: 12
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_3.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130246
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130246 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130238.log
+    jobid: 4
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_1.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130238
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130238 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130254.log
+    jobid: 20
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_3.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130254
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130254 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130248.log
+    jobid: 14
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_2.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130248
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130248 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130240.log
+    jobid: 6
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_3.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130240
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130240 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130250.log
+    jobid: 16
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_2.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130250
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130250 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130242.log
+    jobid: 8
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_3.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130242
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130242 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130252.log
+    jobid: 18
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_2.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130252
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130252 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130244.log
+    jobid: 10
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_1.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130244
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130244 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130239.log
+    jobid: 5
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_1.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130239
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130239 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130247.log
+    jobid: 13
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_3.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130247
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130247 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+
+[Fri Jun 20 17:39:57 2025]
+localrule download_fastq:
+    input: /dfs6/pub/itamburi/CAD_snrnaseq/logs/.init, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+    output: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_3.fastq.gz
+    log: /dfs6/pub/itamburi/CAD_snrnaseq/logs/download_fastq_SRR9130245.log
+    jobid: 11
+    reason: Missing output files: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_1.fastq.gz; Set of input files has changed since last execution
+    wildcards: sample=SRR9130245
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        module load sra-tools/3.0.0
+        fastq-dump --split-files --gzip SRR9130245 --outdir /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778
+        
+[Fri Jun 20 18:41:20 2025]
+Finished jobid: 20 (Rule: download_fastq)
+1 of 37 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 18:41:20 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130254_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130254_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130254_S1_L001_I1_001.fastq.gz
+    jobid: 38
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130254_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130254_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130254_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_3.fastq.gz
+    wildcards: sample=SRR9130254
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130254_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130254_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130254_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130254_S1_L001_I1_001.fastq.gz
+        
+[Fri Jun 20 18:44:12 2025]
+Finished jobid: 19 (Rule: download_fastq)
+2 of 37 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 18:44:12 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130253_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130253_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130253_S1_L001_I1_001.fastq.gz
+    jobid: 37
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130253_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130253_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130253_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_1.fastq.gz
+    wildcards: sample=SRR9130253
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130253_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130253_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130253_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130253_S1_L001_I1_001.fastq.gz
+        
+[Fri Jun 20 18:50:41 2025]
+Finished jobid: 12 (Rule: download_fastq)
+3 of 37 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 18:50:41 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130246_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130246_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130246_S1_L001_I1_001.fastq.gz
+    jobid: 30
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130246_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130246_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130246_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_2.fastq.gz
+    wildcards: sample=SRR9130246
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130246_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130246_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130246_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130246_S1_L001_I1_001.fastq.gz
+        
+[Fri Jun 20 18:51:56 2025]
+Finished jobid: 7 (Rule: download_fastq)
+4 of 37 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 18:51:56 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130241_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130241_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130241_S1_L001_I1_001.fastq.gz
+    jobid: 25
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130241_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130241_S1_L001_I1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130241_S1_L001_R2_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_3.fastq.gz
+    wildcards: sample=SRR9130241
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130241_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130241_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130241_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130241_S1_L001_I1_001.fastq.gz
+        
+[Fri Jun 20 18:52:37 2025]
+Finished jobid: 16 (Rule: download_fastq)
+5 of 37 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 18:52:37 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130250_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130250_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130250_S1_L001_I1_001.fastq.gz
+    jobid: 34
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130250_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130250_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130250_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_2.fastq.gz
+    wildcards: sample=SRR9130250
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130250_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130250_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130250_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130250_S1_L001_I1_001.fastq.gz
+        
+[Fri Jun 20 18:56:49 2025]
+Finished jobid: 17 (Rule: download_fastq)
+6 of 37 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 18:56:49 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130251_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130251_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130251_S1_L001_I1_001.fastq.gz
+    jobid: 35
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130251_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130251_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130251_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_1.fastq.gz
+    wildcards: sample=SRR9130251
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130251_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130251_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130251_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130251_S1_L001_I1_001.fastq.gz
+        
+[Fri Jun 20 18:56:49 2025]
+Finished jobid: 38 (Rule: make_symlink)
+7 of 37 steps (19%) done
+[Fri Jun 20 18:56:49 2025]
+Finished jobid: 37 (Rule: make_symlink)
+8 of 37 steps (22%) done
+[Fri Jun 20 18:56:49 2025]
+Finished jobid: 30 (Rule: make_symlink)
+9 of 37 steps (24%) done
+[Fri Jun 20 18:56:49 2025]
+Finished jobid: 25 (Rule: make_symlink)
+10 of 37 steps (27%) done
+[Fri Jun 20 18:56:49 2025]
+Finished jobid: 34 (Rule: make_symlink)
+11 of 37 steps (30%) done
+[Fri Jun 20 18:56:49 2025]
+Finished jobid: 35 (Rule: make_symlink)
+12 of 37 steps (32%) done
+[Fri Jun 20 18:58:39 2025]
+Finished jobid: 15 (Rule: download_fastq)
+13 of 37 steps (35%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 18:58:39 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_I1_001.fastq.gz
+    jobid: 33
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_I1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R2_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_2.fastq.gz
+    wildcards: sample=SRR9130249
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 18:58:39) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_3.fastq.gz (2025-06-20 18:58:39.039889). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 18:58:39.362826 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 18:59:25 2025]
+Finished jobid: 9 (Rule: download_fastq)
+14 of 37 steps (38%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 18:59:25 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_I1_001.fastq.gz
+    jobid: 27
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_3.fastq.gz
+    wildcards: sample=SRR9130243
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 18:59:25) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_3.fastq.gz (2025-06-20 18:59:25.016926). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 18:59:25.128071 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 19:01:37 2025]
+Finished jobid: 6 (Rule: download_fastq)
+15 of 37 steps (41%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 19:01:37 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_I1_001.fastq.gz
+    jobid: 24
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_I1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_3.fastq.gz
+    wildcards: sample=SRR9130240
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 19:01:37) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_3.fastq.gz (2025-06-20 19:01:37.817032). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 19:01:37.926283 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 19:02:08 2025]
+Finished jobid: 14 (Rule: download_fastq)
+16 of 37 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 19:02:08 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_I1_001.fastq.gz
+    jobid: 32
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_I1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_2.fastq.gz
+    wildcards: sample=SRR9130248
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 19:02:08) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_3.fastq.gz (2025-06-20 19:02:08.091057). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 19:02:08.199530 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 19:04:12 2025]
+Finished jobid: 8 (Rule: download_fastq)
+17 of 37 steps (46%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 19:04:12 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_I1_001.fastq.gz
+    jobid: 26
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_3.fastq.gz
+    wildcards: sample=SRR9130242
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 19:04:12) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_3.fastq.gz (2025-06-20 19:04:12.199156). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 19:04:12.293797 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 19:45:09 2025]
+Finished jobid: 18 (Rule: download_fastq)
+18 of 37 steps (49%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 19:45:09 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_I1_001.fastq.gz
+    jobid: 36
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_2.fastq.gz
+    wildcards: sample=SRR9130252
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 19:45:09) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_3.fastq.gz (2025-06-20 19:45:09.253097). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 19:45:09.388573 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 19:45:20 2025]
+Finished jobid: 13 (Rule: download_fastq)
+19 of 37 steps (51%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 19:45:20 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_I1_001.fastq.gz
+    jobid: 31
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_I1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_3.fastq.gz
+    wildcards: sample=SRR9130247
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 19:45:20) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_3.fastq.gz (2025-06-20 19:45:20.279106). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 19:45:20.379322 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 19:47:45 2025]
+Finished jobid: 11 (Rule: download_fastq)
+20 of 37 steps (54%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 19:47:45 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_I1_001.fastq.gz
+    jobid: 29
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_1.fastq.gz
+    wildcards: sample=SRR9130245
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 19:47:45) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_3.fastq.gz (2025-06-20 19:47:45.131220). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 19:47:45.253691 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 19:48:45 2025]
+Finished jobid: 10 (Rule: download_fastq)
+21 of 37 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 19:48:45 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_I1_001.fastq.gz
+    jobid: 28
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_I1_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_1.fastq.gz
+    wildcards: sample=SRR9130244
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 19:48:45) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_3.fastq.gz (2025-06-20 19:48:45.132267). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 19:48:45.266579 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 19:57:46 2025]
+Finished jobid: 5 (Rule: download_fastq)
+22 of 37 steps (59%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 19:57:46 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_I1_001.fastq.gz
+    jobid: 23
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_I1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R2_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_1.fastq.gz
+    wildcards: sample=SRR9130239
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_I1_001.fastq.gz
+        
+WorkflowError in rule make_symlink in file "/dfs6/pub/itamburi/CAD_snrnaseq/Snakefile", line 89:
+Output /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R1_001.fastq.gz has older modification time (2025-06-20 19:57:46) than input /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_3.fastq.gz (2025-06-20 19:57:46.102694). This could indicate a clock skew problem in your network and would trigger a rerun of this job in the next execution and should therefore be fixed on system level. System time: 2025-06-20 19:57:46.353370 (rule make_symlink, line 163, /dfs6/pub/itamburi/CAD_snrnaseq/Snakefile)
+Removing output files of failed job make_symlink since they might be corrupted:
+/dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_I1_001.fastq.gz
+[Fri Jun 20 20:00:12 2025]
+Finished jobid: 4 (Rule: download_fastq)
+23 of 37 steps (62%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 20:00:12 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130238_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130238_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130238_S1_L001_I1_001.fastq.gz
+    jobid: 22
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130238_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130238_S1_L001_I1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130238_S1_L001_R2_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_1.fastq.gz
+    wildcards: sample=SRR9130238
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130238_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130238_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130238_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130238_S1_L001_I1_001.fastq.gz
+        
+[Fri Jun 20 20:00:12 2025]
+Finished jobid: 22 (Rule: make_symlink)
+24 of 37 steps (65%) done
+[Fri Jun 20 20:22:58 2025]
+Finished jobid: 3 (Rule: download_fastq)
+25 of 37 steps (68%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Jun 20 20:22:58 2025]
+localrule make_symlink:
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130237_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130237_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130237_S1_L001_I1_001.fastq.gz
+    jobid: 21
+    reason: Missing output files: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130237_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130237_S1_L001_I1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130237_S1_L001_R2_001.fastq.gz; Input files updated by another job: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_3.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_2.fastq.gz
+    wildcards: sample=SRR9130237
+    resources: tmpdir=/tmp/itamburi/39794011
+Shell command: 
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130237_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130237_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130237_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130237_S1_L001_I1_001.fastq.gz
+        
+[Fri Jun 20 20:22:59 2025]
+Finished jobid: 21 (Rule: make_symlink)
+26 of 37 steps (70%) done
+Exiting because a job execution failed. Look below for error messages
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 31
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130247_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130247_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 24
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130240_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130240_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 33
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130249_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130249_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 26
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130242_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130242_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 28
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130244_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130244_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 23
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130239_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130239_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 32
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130248_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130248_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 27
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130243_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130243_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 36
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130252_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130252_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+[Fri Jun 20 20:22:59 2025]
+Error in rule make_symlink:
+    message: None
+    jobid: 29
+    input: /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_1.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_2.fastq.gz, /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_3.fastq.gz
+    output: /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R1_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R2_001.fastq.gz, /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_I1_001.fastq.gz
+    shell:
+        
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_1.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R1_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_2.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_R2_001.fastq.gz
+        ln -sf /share/crsp/lab/choljang/itamburi/sra_data/wirka_2019_GSE131778/SRR9130245_3.fastq.gz /dfs6/pub/itamburi/CAD_snrnaseq/fastq/SRR9130245_S1_L001_I1_001.fastq.gz
+        
+        (command exited with non-zero exit code)
+Complete log(s): /dfs6/pub/itamburi/CAD_snrnaseq/.snakemake/log/2025-06-20T173955.589257.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

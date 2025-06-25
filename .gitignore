@@ -5,6 +5,7 @@ bash_scripts/cellranger_HS_ref
 bash_scripts/ensembl
 bash_scripts/fq
 bash_scripts/z
-cellranger_GRCh38/*
+cellranger_GRCh38/fasta/*
+cellranger_GRCh38/genes/*
+cellranger_GRCh38/star/*
 counts/*
-fastq/*

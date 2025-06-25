@@ -1,0 +1,17 @@
+{
+    "fasta_hash": "a01a8c4a2d1ab61a1702d0f686066a4ac420278b",
+    "genomes": [
+        "cellranger_GRCh38"
+    ],
+    "gtf_hash.gz": "d70ebe180f7c24be0f878180b2c697ce0256b817",
+    "input_fasta_files": [
+        "Homo_sapiens.GRCh38.dna.primary_assembly.fa"
+    ],
+    "input_gtf_files": [
+        "Homo_sapiens.GRCh38.114.gtf.gz"
+    ],
+    "mem_gb": 16,
+    "mkref_version": "8.0.1",
+    "threads": 2,
+    "version": null
+}
