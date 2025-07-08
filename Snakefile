@@ -8,15 +8,21 @@ rule all:
     input:
         #rule init_dirs outputs
         f"{WD}/logs/.init",
+        f"{SRA_DIR}/.ready",
         # cellranger mkref outputs
         f"{WD}/cellranger_GRCh38/_mkref.done",
         #expand tells snakemake to expect all of these SRR fastq files/symlinks
+        #rule download_fastq:
         expand(f"{SRA_DIR}/{{sample}}_1.fastq.gz", sample=SAMPLES),
         expand(f"{SRA_DIR}/{{sample}}_2.fastq.gz", sample=SAMPLES),
         expand(f"{SRA_DIR}/{{sample}}_3.fastq.gz", sample=SAMPLES),
+        #rule make_symlink
         expand(f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz", sample=SAMPLES),
         expand(f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz", sample=SAMPLES),
-        expand(f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz", sample=SAMPLES)
+        expand(f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz", sample=SAMPLES),
+        #rule cellranger_count
+        expand(f"{WD}/counts/{{sample}}/outs/molecule_info.h5", sample=SAMPLES),
+        expand(f"{WD}/counts/{{sample}}/.done", sample=SAMPLES)
         #expand(f"{WD}/counts/{{sample}}/outs/filtered_feature_bc_matrix/matrix.mtx.gz", sample=SAMPLES),
         #f"{WD}/GSE131780/outs/analysis/clustering/graphclust/clusters.csv"
         #expand(f"{WD}/counts/{{sample}}/outs/filtered_feature_bc_matrix/matrix.mtx.gz", sample=SAMPLES),
@@ -27,11 +33,13 @@ rule all:
 # touch() checks that the rule is complete
 rule init_dirs:
     output:
-        touch(f"{WD}/logs/.init")
+        touch(f"{WD}/logs/.init"),
+        touch(f"{SRA_DIR}/.ready")
     shell:
         """
         mkdir -p {WD}/logs {WD}/fastq {WD}/counts
         touch {WD}/logs/.init
+        touch {SRA_DIR}/.ready
         """
 
 # *** Build CellRanger reference ***
@@ -65,7 +73,7 @@ rule mkref:
 rule download_fastq:
     input:
         f"{WD}/logs/.init",
-        f"{SRA_DIR}"
+        f"{SRA_DIR}/.ready"
     output:
         # SRA_DIR is a python variable, sample is a snakemake wildcard
         # f"{SRA_DIR}/{{sample}}_1.fastq.gz" uses double curly braces to escape {sample} inside f-string
@@ -88,6 +96,7 @@ rule download_fastq:
 # symlink names are formatted to match expected cellranger count input
 rule make_symlink:
     input:
+        # would it be smart to confirm f"{WD}/logs/.init" exists?
         r1=f"{SRA_DIR}/{{sample}}_1.fastq.gz",
         r2=f"{SRA_DIR}/{{sample}}_2.fastq.gz",
         r3=f"{SRA_DIR}/{{sample}}_3.fastq.gz"
@@ -104,36 +113,40 @@ rule make_symlink:
 
 
 # CellRanger count
-#rule cellranger_count:
-#    input:
-#        r1=f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz",
-#        r2=f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz",
-#        i1=f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz",
-#        ref=f"{WD}/cellranger_GRCh38"
-#    output:
-#        f"{WD}/counts/{{sample}}/outs/filtered_feature_bc_matrix/matrix.mtx.gz",
-#        f"{WD}/counts/{{sample}}/outs/molecule_info.h5"
-#    params:
-#        fastq=f"{WD}/fastq",
-#        ref=f"{WD}/cellranger_GRCh38",
-#        sample = lambda wildcards: wildcards.sample
-#    log:
-#        f"{WD}/logs/{{sample}}.cellranger_count.log"
-#    threads: 8
-#    shell:
-#        """
-#        set -e
-#        module load cellranger/8.0.1
-#        cd {WD}/counts
-#        cellranger count \
-#            --id={params.sample} \
-#            --transcriptome={params.ref} \
-#            --fastqs={params.fastq} \
-#            --sample={params.sample} \
-#            --localcores={threads} \
-#            --localmem=24 \
-#            --create-bam false
-#        """
+# ... in progress:
+rule cellranger_count:
+   input:
+       init=f"{WD}/logs/.init",
+       r1=f"{WD}/fastq/{{sample}}_S1_L001_R1_001.fastq.gz",
+       r2=f"{WD}/fastq/{{sample}}_S1_L001_R2_001.fastq.gz",
+       i1=f"{WD}/fastq/{{sample}}_S1_L001_I1_001.fastq.gz",
+       refdone=f"{WD}/cellranger_GRCh38/_mkref.done"
+   output:
+       molinfo=f"{WD}/counts/{{sample}}/outs/molecule_info.h5",
+       done=f"{WD}/counts/{{sample}}/.done"
+   params:
+       fastq=f"{WD}/fastq",
+       ref=f"{WD}/cellranger_GRCh38",
+       sample = lambda wildcards: wildcards.sample
+   log:
+       f"{WD}/logs/{{sample}}.cellranger_count.log"
+   threads: 8
+   shell:
+       """
+       set -e
+       module load cellranger/8.0.1
+       cd {WD}/counts
+       cellranger count \
+           --id={params.sample} \
+           --transcriptome={params.ref} \
+           --fastqs={params.fastq} \
+           --sample={params.sample} \
+           --localcores={threads} \
+           --localmem=24 \
+           --create-bam false \
+           &> {log}
+       touch {output.done}
+       """
 
 # Generate CSV for aggregation
 #rule make_agg_csv:
